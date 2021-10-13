@@ -6,7 +6,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import { AnimationContainer, Container, Content } from './styles'
+import { AnimationContainer, Container, Content } from '../../styles/createProductsStyles'
 import Link from 'next/link'
 import { FaImage } from 'react-icons/fa'
 
