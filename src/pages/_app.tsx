@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
 import "firebase/firestore";
 import CreateGlobalStyle from '../styles/global'
 
@@ -15,7 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     measurementId: "G-VJWRMZDPML",
   };
 
-  firebase?.initializeApp(firebaseConfig);
+
+  initializeApp(firebaseConfig);
 
   return (
     <>
