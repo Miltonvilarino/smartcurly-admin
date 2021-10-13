@@ -46,8 +46,10 @@ export const AnimationContainer = styled.div`
 
   form {
     width: 340px;
-    text-align: center;
     h1 {
+      font-size: 3rem;
+      text-align: center;
+      font-family: "Inter", "Roboto", sans-serif;
       margin-bottom: 24px;
       color: var(--gray-600);
     }
