@@ -15,9 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     measurementId: "G-VJWRMZDPML",
   };
 
-  if (!firebase?.getApp?.length) {
-    firebase?.initializeApp(firebaseConfig);
-  }
+  firebase?.initializeApp(firebaseConfig);
 
   return (
     <>
