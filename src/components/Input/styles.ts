@@ -57,6 +57,17 @@ export const Container = styled.div<ContainerProps>`
   svg {
     margin-right: 16px;
   }
+
+  textarea {
+    background: transparent;
+    flex: 1;
+    color: #f4ede8;
+    border: 0;
+
+    &::placeholder {
+      color: #666360;
+    }
+  }
 `;
 
 export const Error = styled(Tooltip)`

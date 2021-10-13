@@ -6,7 +6,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import { AnimationContainer, Container, Content } from '../../styles/createProductsStyles'
+import { AnimationContainer, Container, Content } from '../../styles/createProducts'
 import Link from 'next/link'
 import { FaImage } from 'react-icons/fa'
 
@@ -18,6 +18,7 @@ interface FormData {
     name: string;
     description: string;
     brand: string;
+    type: string,
 }
 
 const Home: NextPage = () => {
@@ -66,6 +67,7 @@ const Home: NextPage = () => {
                         <Input
                             name="description"
                             placeholder="Descrição"
+                            textarea
                         />
                         <Input
                             name="brand"
