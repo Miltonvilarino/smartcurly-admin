@@ -5,12 +5,12 @@ import React, {
   useRef,
   useState,
   useCallback,
-} from 'react';
-import { IconBaseProps } from 'react-icons';
-import { FiAlertCircle } from 'react-icons/fi';
-import { useField } from '@unform/core';
+} from "react";
+import { IconBaseProps } from "react-icons";
+import { FiAlertCircle } from "react-icons/fi";
+import { useField } from "@unform/core";
 
-import { Container, Error } from './styles';
+import { Container, Error } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -18,9 +18,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   textarea?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ name, icon: Icon, textarea, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  icon: Icon,
+  textarea,
+  ...rest
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const textareaRef = useRef<any>('');
+  const textareaRef = useRef<any>("");
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
@@ -40,28 +45,21 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, textarea, ...rest }) =>
     registerField({
       name: fieldName,
       ref: inputRef.current,
-      path: 'value',
+      path: "value",
     });
   }, [fieldName, registerField]);
 
   return (
     <Container isErrored={!!error} isFocused={isFocused} isFilled={isFilled}>
       {Icon && <Icon size={20} />}
-      {textarea ?
-        <textarea
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          defaultValue={defaultValue}
-          ref={inputRef}
-          {...rest} />
-        :
-        <input
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          defaultValue={defaultValue}
-          ref={inputRef}
-          {...rest}
-        />}
+
+      <input
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
+        defaultValue={defaultValue}
+        ref={inputRef}
+        {...rest}
+      />
 
       {error && (
         <Error title={error}>
